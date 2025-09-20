@@ -34,10 +34,15 @@ Added player respawn functionality that repositions the player at the starting l
 -Created update_lives() function to manage heart visibility based on remaining lives
 -Integrated life counter with the existing score and message display systems
 
--Technical Challenges and Solutions
+## Technical Challenges and Solutions
+
 Several significant technical hurdles were encountered during implementation:
+
 Collision Detection Issues: After the first collision, the player would lose collision detection capability, preventing subsequent hits from registering. This required careful management of the Area2D node's monitoring properties and CollisionShape2D enabling/disabling states. For this i was not able to figure it out using youtube videos took direct help from AI.
 Signal Connection Problems: Initially, player hit signals were incorrectly connected to the player script instead of the main scene script, causing the life management logic to fail. This required proper signal routing from Player.hit to Main._on_player_hit().
+
 Game State Management: The game would incorrectly display start UI elements during mid-game respawns. This necessitated careful separation of game restart logic from player respawn logic.
+
 Player Respawn Mechanics: Ensuring the player could be hit multiple times required precise timing of collision shape re-enabling and proper reset of the player's Area2D monitoring capabilities.
+
 The final implementation successfully provides players with three lives, complete with visual feedback, while maintaining the game's core mechanics and challenge level. The only bug i couldnt fix or rather logic was how to get the timer to continue till the end, i always got some logic error with it so i finally just made it in essence restart the game without the HUD elemented whenever we lose a life and I allow it to do that three times before it says game over. I just made it work, there should be a better way to do this for sure.
