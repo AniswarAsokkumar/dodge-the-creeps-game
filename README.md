@@ -45,4 +45,4 @@ Game State Management: The game would incorrectly display start UI elements duri
 
 Player Respawn Mechanics: Ensuring the player could be hit multiple times required precise timing of collision shape re-enabling and proper reset of the player's Area2D monitoring capabilities.
 
-The final implementation successfully provides players with three lives, complete with visual feedback, while maintaining the game's core mechanics and challenge level. The only bug i couldnt fix or rather logic was how to get the timer to continue till the end, i always got some logic error with it so i finally just made it in essence restart the game without the HUD elemented whenever we lose a life and I allow it to do that three times before it says game over. I just made it work, there should be a better way to do this for sure.
+The final implementation successfully provides players with three lives, complete with visual feedback, while maintaining the game's core mechanics and challenge level.
